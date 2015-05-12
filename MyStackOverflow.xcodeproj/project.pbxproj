@@ -1,0 +1,450 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		43BFDEBC1B017F7B00197988 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDEBB1B017F7B00197988 /* main.m */; };
+		43BFDEBF1B017F7B00197988 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDEBE1B017F7B00197988 /* AppDelegate.m */; };
+		43BFDEC21B017F7B00197988 /* MyStackOverflow.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDEC01B017F7B00197988 /* MyStackOverflow.xcdatamodeld */; };
+		43BFDEC51B017F7B00197988 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDEC41B017F7B00197988 /* ViewController.m */; };
+		43BFDEC81B017F7B00197988 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43BFDEC61B017F7B00197988 /* Main.storyboard */; };
+		43BFDECA1B017F7B00197988 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43BFDEC91B017F7B00197988 /* Images.xcassets */; };
+		43BFDECD1B017F7B00197988 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43BFDECB1B017F7B00197988 /* LaunchScreen.xib */; };
+		43BFDED91B017F7B00197988 /* MyStackOverflowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDED81B017F7B00197988 /* MyStackOverflowTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		43BFDED31B017F7B00197988 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43BFDEAE1B017F7B00197988 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 43BFDEB51B017F7B00197988;
+			remoteInfo = MyStackOverflow;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		43BFDEB61B017F7B00197988 /* MyStackOverflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyStackOverflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		43BFDEBA1B017F7B00197988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43BFDEBB1B017F7B00197988 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		43BFDEBD1B017F7B00197988 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		43BFDEBE1B017F7B00197988 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		43BFDEC11B017F7B00197988 /* MyStackOverflow.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyStackOverflow.xcdatamodel; sourceTree = "<group>"; };
+		43BFDEC31B017F7B00197988 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		43BFDEC41B017F7B00197988 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		43BFDEC71B017F7B00197988 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		43BFDEC91B017F7B00197988 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		43BFDECC1B017F7B00197988 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		43BFDED21B017F7B00197988 /* MyStackOverflowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyStackOverflowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		43BFDED71B017F7B00197988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43BFDED81B017F7B00197988 /* MyStackOverflowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyStackOverflowTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		43BFDEB31B017F7B00197988 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43BFDECF1B017F7B00197988 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		43BFDEAD1B017F7B00197988 = {
+			isa = PBXGroup;
+			children = (
+				43BFDEB81B017F7B00197988 /* MyStackOverflow */,
+				43BFDED51B017F7B00197988 /* MyStackOverflowTests */,
+				43BFDEB71B017F7B00197988 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		43BFDEB71B017F7B00197988 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				43BFDEB61B017F7B00197988 /* MyStackOverflow.app */,
+				43BFDED21B017F7B00197988 /* MyStackOverflowTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		43BFDEB81B017F7B00197988 /* MyStackOverflow */ = {
+			isa = PBXGroup;
+			children = (
+				43BFDEBD1B017F7B00197988 /* AppDelegate.h */,
+				43BFDEBE1B017F7B00197988 /* AppDelegate.m */,
+				43BFDEC31B017F7B00197988 /* ViewController.h */,
+				43BFDEC41B017F7B00197988 /* ViewController.m */,
+				43BFDEC61B017F7B00197988 /* Main.storyboard */,
+				43BFDEC91B017F7B00197988 /* Images.xcassets */,
+				43BFDECB1B017F7B00197988 /* LaunchScreen.xib */,
+				43BFDEC01B017F7B00197988 /* MyStackOverflow.xcdatamodeld */,
+				43BFDEB91B017F7B00197988 /* Supporting Files */,
+			);
+			path = MyStackOverflow;
+			sourceTree = "<group>";
+		};
+		43BFDEB91B017F7B00197988 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				43BFDEBA1B017F7B00197988 /* Info.plist */,
+				43BFDEBB1B017F7B00197988 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		43BFDED51B017F7B00197988 /* MyStackOverflowTests */ = {
+			isa = PBXGroup;
+			children = (
+				43BFDED81B017F7B00197988 /* MyStackOverflowTests.m */,
+				43BFDED61B017F7B00197988 /* Supporting Files */,
+			);
+			path = MyStackOverflowTests;
+			sourceTree = "<group>";
+		};
+		43BFDED61B017F7B00197988 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				43BFDED71B017F7B00197988 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		43BFDEB51B017F7B00197988 /* MyStackOverflow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43BFDEDC1B017F7B00197988 /* Build configuration list for PBXNativeTarget "MyStackOverflow" */;
+			buildPhases = (
+				43BFDEB21B017F7B00197988 /* Sources */,
+				43BFDEB31B017F7B00197988 /* Frameworks */,
+				43BFDEB41B017F7B00197988 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyStackOverflow;
+			productName = MyStackOverflow;
+			productReference = 43BFDEB61B017F7B00197988 /* MyStackOverflow.app */;
+			productType = "com.apple.product-type.application";
+		};
+		43BFDED11B017F7B00197988 /* MyStackOverflowTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43BFDEDF1B017F7B00197988 /* Build configuration list for PBXNativeTarget "MyStackOverflowTests" */;
+			buildPhases = (
+				43BFDECE1B017F7B00197988 /* Sources */,
+				43BFDECF1B017F7B00197988 /* Frameworks */,
+				43BFDED01B017F7B00197988 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				43BFDED41B017F7B00197988 /* PBXTargetDependency */,
+			);
+			name = MyStackOverflowTests;
+			productName = MyStackOverflowTests;
+			productReference = 43BFDED21B017F7B00197988 /* MyStackOverflowTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		43BFDEAE1B017F7B00197988 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = jnagel;
+				TargetAttributes = {
+					43BFDEB51B017F7B00197988 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					43BFDED11B017F7B00197988 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 43BFDEB51B017F7B00197988;
+					};
+				};
+			};
+			buildConfigurationList = 43BFDEB11B017F7B00197988 /* Build configuration list for PBXProject "MyStackOverflow" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 43BFDEAD1B017F7B00197988;
+			productRefGroup = 43BFDEB71B017F7B00197988 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				43BFDEB51B017F7B00197988 /* MyStackOverflow */,
+				43BFDED11B017F7B00197988 /* MyStackOverflowTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		43BFDEB41B017F7B00197988 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43BFDEC81B017F7B00197988 /* Main.storyboard in Resources */,
+				43BFDECD1B017F7B00197988 /* LaunchScreen.xib in Resources */,
+				43BFDECA1B017F7B00197988 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43BFDED01B017F7B00197988 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		43BFDEB21B017F7B00197988 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43BFDEBF1B017F7B00197988 /* AppDelegate.m in Sources */,
+				43BFDEC21B017F7B00197988 /* MyStackOverflow.xcdatamodeld in Sources */,
+				43BFDEC51B017F7B00197988 /* ViewController.m in Sources */,
+				43BFDEBC1B017F7B00197988 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43BFDECE1B017F7B00197988 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43BFDED91B017F7B00197988 /* MyStackOverflowTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		43BFDED41B017F7B00197988 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 43BFDEB51B017F7B00197988 /* MyStackOverflow */;
+			targetProxy = 43BFDED31B017F7B00197988 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		43BFDEC61B017F7B00197988 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43BFDEC71B017F7B00197988 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		43BFDECB1B017F7B00197988 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43BFDECC1B017F7B00197988 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		43BFDEDA1B017F7B00197988 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		43BFDEDB1B017F7B00197988 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		43BFDEDD1B017F7B00197988 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MyStackOverflow/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		43BFDEDE1B017F7B00197988 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MyStackOverflow/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		43BFDEE01B017F7B00197988 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MyStackOverflowTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyStackOverflow.app/MyStackOverflow";
+			};
+			name = Debug;
+		};
+		43BFDEE11B017F7B00197988 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MyStackOverflowTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyStackOverflow.app/MyStackOverflow";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		43BFDEB11B017F7B00197988 /* Build configuration list for PBXProject "MyStackOverflow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43BFDEDA1B017F7B00197988 /* Debug */,
+				43BFDEDB1B017F7B00197988 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43BFDEDC1B017F7B00197988 /* Build configuration list for PBXNativeTarget "MyStackOverflow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43BFDEDD1B017F7B00197988 /* Debug */,
+				43BFDEDE1B017F7B00197988 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		43BFDEDF1B017F7B00197988 /* Build configuration list for PBXNativeTarget "MyStackOverflowTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43BFDEE01B017F7B00197988 /* Debug */,
+				43BFDEE11B017F7B00197988 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		43BFDEC01B017F7B00197988 /* MyStackOverflow.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				43BFDEC11B017F7B00197988 /* MyStackOverflow.xcdatamodel */,
+			);
+			currentVersion = 43BFDEC11B017F7B00197988 /* MyStackOverflow.xcdatamodel */;
+			path = MyStackOverflow.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 43BFDEAE1B017F7B00197988 /* Project object */;
+}
