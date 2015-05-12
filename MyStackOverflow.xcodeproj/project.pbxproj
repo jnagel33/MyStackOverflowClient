@@ -9,12 +9,17 @@
 /* Begin PBXBuildFile section */
 		43BFDEBC1B017F7B00197988 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDEBB1B017F7B00197988 /* main.m */; };
 		43BFDEBF1B017F7B00197988 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDEBE1B017F7B00197988 /* AppDelegate.m */; };
-		43BFDEC21B017F7B00197988 /* MyStackOverflow.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDEC01B017F7B00197988 /* MyStackOverflow.xcdatamodeld */; };
-		43BFDEC51B017F7B00197988 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDEC41B017F7B00197988 /* ViewController.m */; };
 		43BFDEC81B017F7B00197988 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43BFDEC61B017F7B00197988 /* Main.storyboard */; };
 		43BFDECA1B017F7B00197988 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43BFDEC91B017F7B00197988 /* Images.xcassets */; };
 		43BFDECD1B017F7B00197988 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43BFDECB1B017F7B00197988 /* LaunchScreen.xib */; };
 		43BFDED91B017F7B00197988 /* MyStackOverflowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDED81B017F7B00197988 /* MyStackOverflowTests.m */; };
+		43BFDEE41B01820B00197988 /* BurgerContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDEE31B01820B00197988 /* BurgerContainerViewController.m */; };
+		43BFDEE71B0182A100197988 /* SideMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDEE61B0182A100197988 /* SideMenuTableViewController.m */; };
+		43BFDEEA1B0182DE00197988 /* MyQuestionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDEE91B0182DE00197988 /* MyQuestionsViewController.m */; };
+		43BFDEED1B0182F500197988 /* SearchQuestionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDEEC1B0182F500197988 /* SearchQuestionsViewController.m */; };
+		43BFDEF01B018B4100197988 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDEEF1B018B4100197988 /* MainViewController.m */; };
+		43BFDEF41B01A36300197988 /* WebOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDEF31B01A36300197988 /* WebOAuthViewController.m */; };
+		43BFDEF71B01AE1B00197988 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDEF61B01AE1B00197988 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,15 +38,27 @@
 		43BFDEBB1B017F7B00197988 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		43BFDEBD1B017F7B00197988 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		43BFDEBE1B017F7B00197988 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		43BFDEC11B017F7B00197988 /* MyStackOverflow.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyStackOverflow.xcdatamodel; sourceTree = "<group>"; };
-		43BFDEC31B017F7B00197988 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		43BFDEC41B017F7B00197988 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		43BFDEC71B017F7B00197988 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		43BFDEC91B017F7B00197988 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		43BFDECC1B017F7B00197988 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		43BFDED21B017F7B00197988 /* MyStackOverflowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyStackOverflowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43BFDED71B017F7B00197988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43BFDED81B017F7B00197988 /* MyStackOverflowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyStackOverflowTests.m; sourceTree = "<group>"; };
+		43BFDEE21B01820B00197988 /* BurgerContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BurgerContainerViewController.h; sourceTree = "<group>"; };
+		43BFDEE31B01820B00197988 /* BurgerContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BurgerContainerViewController.m; sourceTree = "<group>"; };
+		43BFDEE51B0182A100197988 /* SideMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuTableViewController.h; sourceTree = "<group>"; };
+		43BFDEE61B0182A100197988 /* SideMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuTableViewController.m; sourceTree = "<group>"; };
+		43BFDEE81B0182DE00197988 /* MyQuestionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyQuestionsViewController.h; sourceTree = "<group>"; };
+		43BFDEE91B0182DE00197988 /* MyQuestionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyQuestionsViewController.m; sourceTree = "<group>"; };
+		43BFDEEB1B0182F500197988 /* SearchQuestionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchQuestionsViewController.h; sourceTree = "<group>"; };
+		43BFDEEC1B0182F500197988 /* SearchQuestionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchQuestionsViewController.m; sourceTree = "<group>"; };
+		43BFDEEE1B018B4100197988 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		43BFDEEF1B018B4100197988 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		43BFDEF11B018DB500197988 /* SideMenuSelectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuSelectionDelegate.h; sourceTree = "<group>"; };
+		43BFDEF21B01A36300197988 /* WebOAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebOAuthViewController.h; sourceTree = "<group>"; };
+		43BFDEF31B01A36300197988 /* WebOAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebOAuthViewController.m; sourceTree = "<group>"; };
+		43BFDEF51B01AE1B00197988 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		43BFDEF61B01AE1B00197988 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,12 +102,24 @@
 			children = (
 				43BFDEBD1B017F7B00197988 /* AppDelegate.h */,
 				43BFDEBE1B017F7B00197988 /* AppDelegate.m */,
-				43BFDEC31B017F7B00197988 /* ViewController.h */,
-				43BFDEC41B017F7B00197988 /* ViewController.m */,
 				43BFDEC61B017F7B00197988 /* Main.storyboard */,
+				43BFDEF51B01AE1B00197988 /* LoginViewController.h */,
+				43BFDEF61B01AE1B00197988 /* LoginViewController.m */,
+				43BFDEEE1B018B4100197988 /* MainViewController.h */,
+				43BFDEEF1B018B4100197988 /* MainViewController.m */,
+				43BFDEE51B0182A100197988 /* SideMenuTableViewController.h */,
+				43BFDEE61B0182A100197988 /* SideMenuTableViewController.m */,
+				43BFDEF11B018DB500197988 /* SideMenuSelectionDelegate.h */,
+				43BFDEE81B0182DE00197988 /* MyQuestionsViewController.h */,
+				43BFDEE91B0182DE00197988 /* MyQuestionsViewController.m */,
+				43BFDEEB1B0182F500197988 /* SearchQuestionsViewController.h */,
+				43BFDEEC1B0182F500197988 /* SearchQuestionsViewController.m */,
+				43BFDEE21B01820B00197988 /* BurgerContainerViewController.h */,
+				43BFDEE31B01820B00197988 /* BurgerContainerViewController.m */,
+				43BFDEF21B01A36300197988 /* WebOAuthViewController.h */,
+				43BFDEF31B01A36300197988 /* WebOAuthViewController.m */,
 				43BFDEC91B017F7B00197988 /* Images.xcassets */,
 				43BFDECB1B017F7B00197988 /* LaunchScreen.xib */,
-				43BFDEC01B017F7B00197988 /* MyStackOverflow.xcdatamodeld */,
 				43BFDEB91B017F7B00197988 /* Supporting Files */,
 			);
 			path = MyStackOverflow;
@@ -223,9 +252,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				43BFDEBF1B017F7B00197988 /* AppDelegate.m in Sources */,
-				43BFDEC21B017F7B00197988 /* MyStackOverflow.xcdatamodeld in Sources */,
-				43BFDEC51B017F7B00197988 /* ViewController.m in Sources */,
+				43BFDEF41B01A36300197988 /* WebOAuthViewController.m in Sources */,
+				43BFDEED1B0182F500197988 /* SearchQuestionsViewController.m in Sources */,
+				43BFDEEA1B0182DE00197988 /* MyQuestionsViewController.m in Sources */,
 				43BFDEBC1B017F7B00197988 /* main.m in Sources */,
+				43BFDEF71B01AE1B00197988 /* LoginViewController.m in Sources */,
+				43BFDEE41B01820B00197988 /* BurgerContainerViewController.m in Sources */,
+				43BFDEE71B0182A100197988 /* SideMenuTableViewController.m in Sources */,
+				43BFDEF01B018B4100197988 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,19 +466,6 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		43BFDEC01B017F7B00197988 /* MyStackOverflow.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				43BFDEC11B017F7B00197988 /* MyStackOverflow.xcdatamodel */,
-			);
-			currentVersion = 43BFDEC11B017F7B00197988 /* MyStackOverflow.xcdatamodel */;
-			path = MyStackOverflow.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 43BFDEAE1B017F7B00197988 /* Project object */;
 }
