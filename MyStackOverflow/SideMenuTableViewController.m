@@ -7,6 +7,7 @@
 //
 
 #import "SideMenuTableViewController.h"
+#import "StackOverFlowStyleKit.h"
 
 @interface SideMenuTableViewController ()
 
@@ -15,13 +16,9 @@
 @implementation SideMenuTableViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+  [super viewDidLoad];
+  self.tableView.backgroundColor = [StackOverFlowStyleKit orange];
+  self.tableView.separatorColor = [StackOverFlowStyleKit orange];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,7 +29,18 @@
 #pragma mark - Table view data source
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  [self.delegate userDidSelectOption:indexPath.row];
+  [self.delegate userDidSelectOption:indexPath.section];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+  if (section == 0) {
+    return 40;
+  }
+  return 0.5;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+  return 70;
 }
 
 @end

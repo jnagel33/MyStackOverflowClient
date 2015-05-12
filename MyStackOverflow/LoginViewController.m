@@ -7,6 +7,9 @@
 //
 
 #import "LoginViewController.h"
+#import "StackOverFlowStyleKit.h"
+#import "WebOAuthViewController.h"
+#import "BurgerContainerViewController.h"
 
 @interface LoginViewController ()
 
@@ -41,7 +44,7 @@
     UIView *orangeView = [[UIView alloc] initWithFrame:CGRectMake(self.view.center.x - 60, i * 15 , 40, 10)];
     
     [elasticityBehavior addItem:orangeView];
-    orangeView.backgroundColor = [UIColor orangeColor];
+    orangeView.backgroundColor = [StackOverFlowStyleKit orange];
     [self.view addSubview:orangeView];
     [gravity addItem:orangeView];
     [collision setTranslatesReferenceBoundsIntoBoundary:true];
@@ -50,7 +53,7 @@
     UIView *orangeView2 = [[UIView alloc] initWithFrame:CGRectMake(self.view.center.x + 40, i * 15, 40, 10)];
     
     [elasticityBehavior addItem:orangeView2];
-    orangeView2.backgroundColor = [UIColor grayColor];
+    orangeView2.backgroundColor = [StackOverFlowStyleKit lightGray];
     [self.view addSubview:orangeView2];
     [gravity addItem:orangeView2];
     [collision setTranslatesReferenceBoundsIntoBoundary:true];
@@ -59,7 +62,7 @@
     UIView *orangeView3 = [[UIView alloc] initWithFrame:CGRectMake(self.view.center.x - 120, i * 15 , 40, 10)];
     
     [elasticityBehavior addItem:orangeView3];
-    orangeView3.backgroundColor = [UIColor grayColor];
+    orangeView3.backgroundColor = [StackOverFlowStyleKit lightGray];
     [self.view addSubview:orangeView3];
     [gravity addItem:orangeView3];
     [collision setTranslatesReferenceBoundsIntoBoundary:true];
@@ -68,7 +71,7 @@
     UIView *orangeView4 = [[UIView alloc] initWithFrame:CGRectMake(self.view.center.x + 80, i * 15, 40, 10)];
     
     [elasticityBehavior addItem:orangeView4];
-    orangeView4.backgroundColor = [UIColor orangeColor];
+    orangeView4.backgroundColor = [StackOverFlowStyleKit orange];
     [self.view addSubview:orangeView4];
     [gravity addItem:orangeView4];
     [collision setTranslatesReferenceBoundsIntoBoundary:true];
@@ -89,4 +92,20 @@
   _animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
   return _animator;
 }
+
+- (IBAction)loginPressed:(UIButton *)sender {
+  if ([[NSUserDefaults standardUserDefaults]objectForKey:@"token"]) {
+  [self performSegueWithIdentifier:@"ShowMenu" sender:self];
+  } else {
+    WebOAuthViewController *webVC = [[WebOAuthViewController alloc] init];
+    webVC.view.frame = self.view.frame;
+    webVC.view.backgroundColor = [UIColor greenColor];
+    
+    [self presentViewController:webVC animated:true completion:^{
+  }];
+  }
+}
+
+
+
 @end

@@ -20,6 +20,7 @@
 		43BFDEF01B018B4100197988 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDEEF1B018B4100197988 /* MainViewController.m */; };
 		43BFDEF41B01A36300197988 /* WebOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDEF31B01A36300197988 /* WebOAuthViewController.m */; };
 		43BFDEF71B01AE1B00197988 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDEF61B01AE1B00197988 /* LoginViewController.m */; };
+		43BFDEFA1B01E4AF00197988 /* StackOverFlowStyleKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDEF91B01E4AF00197988 /* StackOverFlowStyleKit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		43BFDEF31B01A36300197988 /* WebOAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebOAuthViewController.m; sourceTree = "<group>"; };
 		43BFDEF51B01AE1B00197988 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		43BFDEF61B01AE1B00197988 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		43BFDEF81B01E4AF00197988 /* StackOverFlowStyleKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackOverFlowStyleKit.h; sourceTree = "<group>"; };
+		43BFDEF91B01E4AF00197988 /* StackOverFlowStyleKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackOverFlowStyleKit.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				43BFDEC61B017F7B00197988 /* Main.storyboard */,
 				43BFDEF51B01AE1B00197988 /* LoginViewController.h */,
 				43BFDEF61B01AE1B00197988 /* LoginViewController.m */,
+				43BFDEF81B01E4AF00197988 /* StackOverFlowStyleKit.h */,
+				43BFDEF91B01E4AF00197988 /* StackOverFlowStyleKit.m */,
 				43BFDEEE1B018B4100197988 /* MainViewController.h */,
 				43BFDEEF1B018B4100197988 /* MainViewController.m */,
 				43BFDEE51B0182A100197988 /* SideMenuTableViewController.h */,
@@ -256,6 +261,7 @@
 				43BFDEED1B0182F500197988 /* SearchQuestionsViewController.m in Sources */,
 				43BFDEEA1B0182DE00197988 /* MyQuestionsViewController.m in Sources */,
 				43BFDEBC1B017F7B00197988 /* main.m in Sources */,
+				43BFDEFA1B01E4AF00197988 /* StackOverFlowStyleKit.m in Sources */,
 				43BFDEF71B01AE1B00197988 /* LoginViewController.m in Sources */,
 				43BFDEE41B01820B00197988 /* BurgerContainerViewController.m in Sources */,
 				43BFDEE71B0182A100197988 /* SideMenuTableViewController.m in Sources */,

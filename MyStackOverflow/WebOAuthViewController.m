@@ -8,6 +8,7 @@
 
 #import "WebOAuthViewController.h"
 #import <WebKit/WebKit.h>
+#import "BurgerContainerViewController.h"
 
 @interface WebOAuthViewController () <WKNavigationDelegate>
 
@@ -41,7 +42,6 @@
     [[NSUserDefaults standardUserDefaults]synchronize];
     
     [self dismissViewControllerAnimated:true completion:^{
-      
     }];
   }
 }

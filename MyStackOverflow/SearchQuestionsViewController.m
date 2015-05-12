@@ -7,6 +7,7 @@
 //
 
 #import "SearchQuestionsViewController.h"
+#import "StackOverFlowStyleKit.h"
 
 @interface SearchQuestionsViewController ()
 
@@ -16,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  self.view.backgroundColor = [UIColor blueColor];
+    self.view.backgroundColor = [StackOverFlowStyleKit lightGray];
     // Do any additional setup after loading the view.
 }
 

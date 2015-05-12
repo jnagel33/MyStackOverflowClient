@@ -7,6 +7,7 @@
 //
 
 #import "MyQuestionsViewController.h"
+#import "StackOverFlowStyleKit.h"
 
 @interface MyQuestionsViewController ()
 
@@ -16,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  self.view.backgroundColor = [UIColor greenColor];
+    self.view.backgroundColor = [StackOverFlowStyleKit lightGray];
     // Do any additional setup after loading the view.
 }
 

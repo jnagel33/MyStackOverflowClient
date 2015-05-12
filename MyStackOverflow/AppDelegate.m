@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "BurgerContainerViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
+  if ([[NSUserDefaults standardUserDefaults]valueForKey:@"token"]) {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    BurgerContainerViewController *containerVC = [storyboard instantiateViewControllerWithIdentifier:@"ContainerVC"];
+    self.window.rootViewController = containerVC;
+  }
+  
+  
   return YES;
 }
 
