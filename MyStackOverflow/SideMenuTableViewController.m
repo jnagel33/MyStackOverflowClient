@@ -8,6 +8,7 @@
 
 #import "SideMenuTableViewController.h"
 #import "StackOverFlowStyleKit.h"
+#import "SideMenuTableViewCell.h"
 
 @interface SideMenuTableViewController ()
 
@@ -19,6 +20,9 @@
   [super viewDidLoad];
   self.tableView.backgroundColor = [StackOverFlowStyleKit orange];
   self.tableView.separatorColor = [StackOverFlowStyleKit orange];
+  
+  UINib *cellNib = [UINib nibWithNibName:@"SideMenuTableViewCell" bundle:[NSBundle mainBundle]];
+  [self.tableView registerNib:cellNib forCellReuseIdentifier:@"SideMenuCell"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,6 +45,18 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
   return 70;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  SideMenuTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"SideMenuCell" forIndexPath:indexPath];
+  if (indexPath.section == 0) {
+    cell.sectionImageView.image = [UIImage imageNamed:@"SearchQuestions"];
+  } else if (indexPath.section == 1) {
+    cell.sectionImageView.image = [UIImage imageNamed:@"MyQuestions"];
+  } else {
+    cell.sectionImageView.image = [UIImage imageNamed:@"Profile"];
+  }
+  return cell;
 }
 
 @end

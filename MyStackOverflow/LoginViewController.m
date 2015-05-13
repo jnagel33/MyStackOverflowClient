@@ -35,7 +35,6 @@
     
   }];
   
-  
   UICollisionBehavior *collision = [[UICollisionBehavior alloc] init];
   UIGravityBehavior *gravity = [[UIGravityBehavior alloc] init];
   UIDynamicItemBehavior *elasticityBehavior =
@@ -78,7 +77,7 @@
     [collision addItem:orangeView4];
   }
   
-  elasticityBehavior.elasticity = 0.9f;
+  elasticityBehavior.elasticity = 0.8f;
   [self.animator addBehavior:elasticityBehavior];
   
   [self.animator addBehavior:collision];

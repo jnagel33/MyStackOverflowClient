@@ -20,8 +20,8 @@
 @property(strong,nonatomic)SideMenuTableViewController *sideMenuVC;
 @property(strong,nonatomic)UIButton *burgerButton;
 @property(strong,nonatomic)UITapGestureRecognizer *tapToClose;
-@property (strong,nonatomic) MyQuestionsViewController *myQuestionsVC;
-@property (strong,nonatomic) SearchQuestionsViewController *searchQuestionsVC;
+@property (strong,nonatomic) UINavigationController *myQuestionsVC;
+@property (strong,nonatomic) UINavigationController *searchQuestionsVC;
 
 @end
 
@@ -37,7 +37,7 @@
   [sideMenuVC didMoveToParentViewController:self];
   sideMenuVC.delegate = self;
   
-  SearchQuestionsViewController *searchQuestionsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchQuestionsVC"];
+  UINavigationController *searchQuestionsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchQuestionsNav"];
   [self addChildViewController:searchQuestionsVC];
   searchQuestionsVC.view.frame = self.view.frame;
   [self.view addSubview:searchQuestionsVC.view];
@@ -48,7 +48,7 @@
   self.slideGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(slideSideMenu:)];
   [self.topViewController.view addGestureRecognizer:self.slideGesture];
   
-  UIButton *burgerButton = [[UIButton alloc]initWithFrame:CGRectMake(14, 25, 50, 44)];
+  UIButton *burgerButton = [[UIButton alloc]initWithFrame:CGRectMake(14, 25, 35, 30)];
   [burgerButton setBackgroundImage:[UIImage imageNamed:@"BurgerButton"] forState:UIControlStateNormal];
   [burgerButton addTarget:self action:@selector(showSideMenu) forControlEvents:UIControlEventTouchUpInside];
   [self.topViewController.view addSubview:burgerButton];
@@ -143,20 +143,20 @@
 
 }
 
--(MyQuestionsViewController *)myQuestionsVC {
+-(UINavigationController *)myQuestionsVC {
   if (_myQuestionsVC != nil) {
     return _myQuestionsVC;
   }
-  _myQuestionsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MyQuestionsVC"];
+  _myQuestionsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MyQuestionsNav"];
   return _myQuestionsVC;
 }
 
--(SearchQuestionsViewController *)searchQuestionsVC {
+-(UINavigationController *)searchQuestionsVC {
   if (_searchQuestionsVC != nil) {
     return _searchQuestionsVC;
 }
   
-  _searchQuestionsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchQuestionsVC"];
+  _searchQuestionsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchQuestionsNav"];
   return _searchQuestionsVC;
 }
 
