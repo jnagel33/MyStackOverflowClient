@@ -17,7 +17,6 @@
 		43BFDEE71B0182A100197988 /* SideMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDEE61B0182A100197988 /* SideMenuTableViewController.m */; };
 		43BFDEEA1B0182DE00197988 /* MyQuestionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDEE91B0182DE00197988 /* MyQuestionsViewController.m */; };
 		43BFDEED1B0182F500197988 /* SearchQuestionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDEEC1B0182F500197988 /* SearchQuestionsViewController.m */; };
-		43BFDEF01B018B4100197988 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDEEF1B018B4100197988 /* MainViewController.m */; };
 		43BFDEF41B01A36300197988 /* WebOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDEF31B01A36300197988 /* WebOAuthViewController.m */; };
 		43BFDEF71B01AE1B00197988 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDEF61B01AE1B00197988 /* LoginViewController.m */; };
 		43BFDEFA1B01E4AF00197988 /* StackOverFlowStyleKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDEF91B01E4AF00197988 /* StackOverFlowStyleKit.m */; };
@@ -27,6 +26,11 @@
 		43BFDF061B03337700197988 /* QuestionsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDF051B03337700197988 /* QuestionsTableViewCell.m */; };
 		43BFDF091B033CB500197988 /* SideMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDF081B033CB500197988 /* SideMenuTableViewCell.m */; };
 		43BFDF0B1B033F4500197988 /* SideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43BFDF0A1B033F4500197988 /* SideMenuTableViewCell.xib */; };
+		43BFDF111B03B67300197988 /* ImageService.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDF101B03B67300197988 /* ImageService.m */; };
+		43BFDF141B03C3FB00197988 /* ImageResizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDF131B03C3FB00197988 /* ImageResizer.m */; };
+		43BFDF171B03CF0800197988 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDF161B03CF0800197988 /* User.m */; };
+		43BFDF1A1B03DFBB00197988 /* ProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDF191B03DFBB00197988 /* ProfileTableViewController.m */; };
+		A3D60541E97C1E54470510C1 /* libPods-MyStackOverflowTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E13996144664DA644E1231 /* libPods-MyStackOverflowTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,8 +63,6 @@
 		43BFDEE91B0182DE00197988 /* MyQuestionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyQuestionsViewController.m; sourceTree = "<group>"; };
 		43BFDEEB1B0182F500197988 /* SearchQuestionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchQuestionsViewController.h; sourceTree = "<group>"; };
 		43BFDEEC1B0182F500197988 /* SearchQuestionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchQuestionsViewController.m; sourceTree = "<group>"; };
-		43BFDEEE1B018B4100197988 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		43BFDEEF1B018B4100197988 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		43BFDEF11B018DB500197988 /* SideMenuSelectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuSelectionDelegate.h; sourceTree = "<group>"; };
 		43BFDEF21B01A36300197988 /* WebOAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebOAuthViewController.h; sourceTree = "<group>"; };
 		43BFDEF31B01A36300197988 /* WebOAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebOAuthViewController.m; sourceTree = "<group>"; };
@@ -79,6 +81,14 @@
 		43BFDF071B033CB500197988 /* SideMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuTableViewCell.h; sourceTree = "<group>"; };
 		43BFDF081B033CB500197988 /* SideMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuTableViewCell.m; sourceTree = "<group>"; };
 		43BFDF0A1B033F4500197988 /* SideMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuTableViewCell.xib; sourceTree = "<group>"; };
+		43BFDF0F1B03B67300197988 /* ImageService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageService.h; sourceTree = "<group>"; };
+		43BFDF101B03B67300197988 /* ImageService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageService.m; sourceTree = "<group>"; };
+		43BFDF121B03C3FB00197988 /* ImageResizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageResizer.h; sourceTree = "<group>"; };
+		43BFDF131B03C3FB00197988 /* ImageResizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageResizer.m; sourceTree = "<group>"; };
+		43BFDF151B03CF0800197988 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		43BFDF161B03CF0800197988 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		43BFDF181B03DFBB00197988 /* ProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileTableViewController.h; sourceTree = "<group>"; };
+		43BFDF191B03DFBB00197988 /* ProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,37 +132,9 @@
 			children = (
 				43BFDEBD1B017F7B00197988 /* AppDelegate.h */,
 				43BFDEBE1B017F7B00197988 /* AppDelegate.m */,
-				43BFDEC61B017F7B00197988 /* Main.storyboard */,
-				43BFDF0A1B033F4500197988 /* SideMenuTableViewCell.xib */,
-				43BFDF071B033CB500197988 /* SideMenuTableViewCell.h */,
-				43BFDF081B033CB500197988 /* SideMenuTableViewCell.m */,
-				43BFDEFE1B03069500197988 /* StackOverflowJSONParser.h */,
-				43BFDEFF1B03069500197988 /* StackOverflowJSONParser.m */,
-				43BFDEF51B01AE1B00197988 /* LoginViewController.h */,
-				43BFDEF61B01AE1B00197988 /* LoginViewController.m */,
-				43BFDEF81B01E4AF00197988 /* StackOverFlowStyleKit.h */,
-				43BFDEF91B01E4AF00197988 /* StackOverFlowStyleKit.m */,
-				43BFDEEE1B018B4100197988 /* MainViewController.h */,
-				43BFDEEF1B018B4100197988 /* MainViewController.m */,
-				43BFDEE51B0182A100197988 /* SideMenuTableViewController.h */,
-				43BFDEE61B0182A100197988 /* SideMenuTableViewController.m */,
-				43BFDEF11B018DB500197988 /* SideMenuSelectionDelegate.h */,
-				43BFDEE81B0182DE00197988 /* MyQuestionsViewController.h */,
-				43BFDEE91B0182DE00197988 /* MyQuestionsViewController.m */,
-				43BFDEEB1B0182F500197988 /* SearchQuestionsViewController.h */,
-				43BFDEEC1B0182F500197988 /* SearchQuestionsViewController.m */,
-				43BFDF041B03337700197988 /* QuestionsTableViewCell.h */,
-				43BFDF051B03337700197988 /* QuestionsTableViewCell.m */,
-				43BFDEFB1B02FF4200197988 /* StackOverflowService.h */,
-				43BFDEFC1B02FF4200197988 /* StackOverflowService.m */,
-				43BFDEE21B01820B00197988 /* BurgerContainerViewController.h */,
-				43BFDEE31B01820B00197988 /* BurgerContainerViewController.m */,
-				43BFDEF21B01A36300197988 /* WebOAuthViewController.h */,
-				43BFDEF31B01A36300197988 /* WebOAuthViewController.m */,
-				43BFDF011B03286C00197988 /* Question.h */,
-				43BFDF021B03286C00197988 /* Question.m */,
-				43BFDEC91B017F7B00197988 /* Images.xcassets */,
-				43BFDECB1B017F7B00197988 /* LaunchScreen.xib */,
+				43BFDF0C1B03B5A500197988 /* View */,
+				43BFDF0D1B03B5B400197988 /* Model */,
+				43BFDF0E1B03B5C200197988 /* Controller */,
 				43BFDEB91B017F7B00197988 /* Supporting Files */,
 			);
 			path = MyStackOverflow;
@@ -182,6 +164,64 @@
 				43BFDED71B017F7B00197988 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		43BFDF0C1B03B5A500197988 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				43BFDEC91B017F7B00197988 /* Images.xcassets */,
+				43BFDECB1B017F7B00197988 /* LaunchScreen.xib */,
+				43BFDEC61B017F7B00197988 /* Main.storyboard */,
+				43BFDF181B03DFBB00197988 /* ProfileTableViewController.h */,
+				43BFDF191B03DFBB00197988 /* ProfileTableViewController.m */,
+				43BFDF0A1B033F4500197988 /* SideMenuTableViewCell.xib */,
+				43BFDF071B033CB500197988 /* SideMenuTableViewCell.h */,
+				43BFDF081B033CB500197988 /* SideMenuTableViewCell.m */,
+				43BFDEF81B01E4AF00197988 /* StackOverFlowStyleKit.h */,
+				43BFDEF91B01E4AF00197988 /* StackOverFlowStyleKit.m */,
+				43BFDF041B03337700197988 /* QuestionsTableViewCell.h */,
+				43BFDF051B03337700197988 /* QuestionsTableViewCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		43BFDF0D1B03B5B400197988 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				43BFDF011B03286C00197988 /* Question.h */,
+				43BFDF021B03286C00197988 /* Question.m */,
+				43BFDEFE1B03069500197988 /* StackOverflowJSONParser.h */,
+				43BFDEFF1B03069500197988 /* StackOverflowJSONParser.m */,
+				43BFDEF11B018DB500197988 /* SideMenuSelectionDelegate.h */,
+				43BFDEFB1B02FF4200197988 /* StackOverflowService.h */,
+				43BFDEFC1B02FF4200197988 /* StackOverflowService.m */,
+				43BFDF151B03CF0800197988 /* User.h */,
+				43BFDF161B03CF0800197988 /* User.m */,
+				43BFDF0F1B03B67300197988 /* ImageService.h */,
+				43BFDF101B03B67300197988 /* ImageService.m */,
+				43BFDF121B03C3FB00197988 /* ImageResizer.h */,
+				43BFDF131B03C3FB00197988 /* ImageResizer.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		43BFDF0E1B03B5C200197988 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				43BFDEF51B01AE1B00197988 /* LoginViewController.h */,
+				43BFDEF61B01AE1B00197988 /* LoginViewController.m */,
+				43BFDEE51B0182A100197988 /* SideMenuTableViewController.h */,
+				43BFDEE61B0182A100197988 /* SideMenuTableViewController.m */,
+				43BFDEE81B0182DE00197988 /* MyQuestionsViewController.h */,
+				43BFDEE91B0182DE00197988 /* MyQuestionsViewController.m */,
+				43BFDEEB1B0182F500197988 /* SearchQuestionsViewController.h */,
+				43BFDEEC1B0182F500197988 /* SearchQuestionsViewController.m */,
+				43BFDEE21B01820B00197988 /* BurgerContainerViewController.h */,
+				43BFDEE31B01820B00197988 /* BurgerContainerViewController.m */,
+				43BFDEF21B01A36300197988 /* WebOAuthViewController.h */,
+				43BFDEF31B01A36300197988 /* WebOAuthViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,19 +327,22 @@
 			files = (
 				43BFDEBF1B017F7B00197988 /* AppDelegate.m in Sources */,
 				43BFDF061B03337700197988 /* QuestionsTableViewCell.m in Sources */,
+				43BFDF171B03CF0800197988 /* User.m in Sources */,
+				43BFDF1A1B03DFBB00197988 /* ProfileTableViewController.m in Sources */,
 				43BFDF031B03286C00197988 /* Question.m in Sources */,
 				43BFDEF41B01A36300197988 /* WebOAuthViewController.m in Sources */,
 				43BFDEED1B0182F500197988 /* SearchQuestionsViewController.m in Sources */,
 				43BFDEEA1B0182DE00197988 /* MyQuestionsViewController.m in Sources */,
 				43BFDEBC1B017F7B00197988 /* main.m in Sources */,
 				43BFDF091B033CB500197988 /* SideMenuTableViewCell.m in Sources */,
+				43BFDF141B03C3FB00197988 /* ImageResizer.m in Sources */,
 				43BFDEFA1B01E4AF00197988 /* StackOverFlowStyleKit.m in Sources */,
 				43BFDEFD1B02FF4200197988 /* StackOverflowService.m in Sources */,
 				43BFDEF71B01AE1B00197988 /* LoginViewController.m in Sources */,
 				43BFDEE41B01820B00197988 /* BurgerContainerViewController.m in Sources */,
 				43BFDF001B03069500197988 /* StackOverflowJSONParser.m in Sources */,
+				43BFDF111B03B67300197988 /* ImageService.m in Sources */,
 				43BFDEE71B0182A100197988 /* SideMenuTableViewController.m in Sources */,
-				43BFDEF01B018B4100197988 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
