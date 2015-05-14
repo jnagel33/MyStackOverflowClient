@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 @class Question;
+@class Answer;
 
 @interface QuestionsTableViewCell : UITableViewCell
 
 -(void)configureCell:(Question *)question;
+
+-(void)configureCellAnswer:(Answer *)answer;
 
 @end

@@ -98,7 +98,6 @@
   } else {
     WebOAuthViewController *webVC = [[WebOAuthViewController alloc] init];
     webVC.view.frame = self.view.frame;
-    webVC.view.backgroundColor = [UIColor greenColor];
     
     [self presentViewController:webVC animated:true completion:^{
   }];

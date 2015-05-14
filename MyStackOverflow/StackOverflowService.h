@@ -14,13 +14,18 @@
 #define kMeEndpoint @"/me"
 #define kQuestionEndpoint @"/questions"
 #define kAnswersEndpoint @"/answers"
+@class AFHTTPRequestOperationManager;
 
 @interface StackOverflowService : NSObject
 
-+(void)fetchQuestionsForSearchTerm:(NSString *)searchTerm completionHandler:(void (^)(NSArray* answers, NSString *error))completionHandler;
++(id) sharedService;
 
-+(void)fetchUserProfile:(void (^)(User* user, NSString *error))completionHandler;
+@property(strong,nonatomic) AFHTTPRequestOperationManager *manager;
 
-+(void)fetchAnswerIDsToQuestion:(NSInteger) questionID completionHandler:(void (^)(NSArray *answerIDs, NSString *error))completionHandler;
-+(void)fetchAnswerByIDs:(NSArray *)answerIDs completionHandler:(void (^)(NSArray *answerIDs, NSString *error))completionHandler;
+-(void)fetchQuestionsForSearchTerm:(NSString *)searchTerm completionHandler:(void (^)(NSArray* answers, NSString *error))completionHandler;
+
+-(void)fetchUserProfile:(void (^)(User* user, NSString *error))completionHandler;
+
+-(void)fetchAnswerIDsToQuestion:(NSInteger) questionID completionHandler:(void (^)(NSArray *answerIDs, NSString *error))completionHandler;
+-(void)fetchAnswerByIDs:(NSArray *)answerIDs completionHandler:(void (^)(NSArray *answerIDs, NSString *error))completionHandler;
 @end

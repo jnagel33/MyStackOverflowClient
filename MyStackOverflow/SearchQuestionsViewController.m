@@ -13,12 +13,14 @@
 #import "ImageService.h"
 #import "Question.h"
 #import "ImageResizer.h"
+#import "QuestionWebViewController.h"
 
 const CGFloat kProfileImageSizeWidthHeight = 50;
 
 @interface SearchQuestionsViewController () <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property(strong,nonatomic)NSArray *questions;
+@property(strong,nonatomic)StackOverflowService *stackService;
 
 @end
 
@@ -26,6 +28,8 @@ const CGFloat kProfileImageSizeWidthHeight = 50;
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
+  self.stackService = [StackOverflowService sharedService];
   
   self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"SearchQuestions"]];
   [self.navigationController.navigationBar setBarTintColor:[StackOverFlowStyleKit lightGray]];
@@ -73,15 +77,15 @@ const CGFloat kProfileImageSizeWidthHeight = 50;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  [tableView deselectRowAtIndexPath:indexPath animated:true];
   Question *question = self.questions[indexPath.section];
-  [StackOverflowService fetchAnswerIDsToQuestion:question.questionID completionHandler:^(NSArray *answerIDs, NSString *error) {
-    NSLog(@"%@",answerIDs);
-    [StackOverflowService fetchAnswerByIDs:answerIDs completionHandler:^(NSArray *answers, NSString *error) {
-      NSLog(@"%@",answers);
-    }];
-    
-  }];
+  [tableView deselectRowAtIndexPath:indexPath animated:true];
+  
+  QuestionWebViewController *webVC = [[QuestionWebViewController alloc] init];
+  webVC.link = question.link;
+  webVC.view.frame = self.view.frame;
+//  [self.navigationController pushViewController:webVC animated:true];
+  
+  [self presentViewController:webVC animated:true completion:nil];
 }
 
 #pragma mark - UISearchBarDelegate
@@ -89,7 +93,7 @@ const CGFloat kProfileImageSizeWidthHeight = 50;
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
   if (searchBar.text) {
     [self.searchBar resignFirstResponder];
-    [StackOverflowService fetchQuestionsForSearchTerm:searchBar.text completionHandler:^(NSArray *items, NSString *error) {
+    [self.stackService fetchQuestionsForSearchTerm:searchBar.text completionHandler:^(NSArray *items, NSString *error) {
       if (error != nil) {
         //handle error
       } else {

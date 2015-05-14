@@ -10,7 +10,7 @@
 
 @implementation Question
 
--(instancetype)init:(NSInteger)questionID withTitle:(NSString *)title andIsAnswered:(BOOL)isAnswered withTags:(NSArray *)tags AndProfileImageURL:(NSString *)profileImageURL AndCreatedAt:(NSString *)createdAt {
+-(instancetype)init:(NSInteger)questionID withTitle:(NSString *)title andIsAnswered:(BOOL)isAnswered withTags:(NSArray *)tags AndProfileImageURL:(NSString *)profileImageURL AndCreatedAt:(NSString *)createdAt WithLink:(NSString *)link {
   if (self = [super init]) {
     _questionID = questionID;
     _title = title;
@@ -18,7 +18,7 @@
     _tags = tags;
     _profileImageURL = profileImageURL;
     _createdAt = createdAt;
-  
+    _link = link;
   }
   return self;
 }

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 jnagel. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 @class User;
 
 @interface Answer : NSObject
@@ -15,6 +15,7 @@
 @property(nonatomic)BOOL isAccepted;
 @property(nonatomic)NSInteger score;
 @property(strong,nonatomic)NSString *profileImageURL;
+@property(strong,nonatomic)UIImage *profileImage;
 
 -(instancetype)initWithAnswerID:(NSInteger)answerID isaccepted:(BOOL)isAccepted score:(NSInteger)score profileImageURL:(NSString *)profileImageURL;
 

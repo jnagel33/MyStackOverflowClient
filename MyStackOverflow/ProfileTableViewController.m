@@ -16,6 +16,7 @@
 @interface ProfileTableViewController ()
 
 @property(strong,nonatomic)User *user;
+@property(strong,nonatomic)StackOverflowService *stackService;
 
 @end
 
@@ -24,7 +25,9 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  [StackOverflowService fetchUserProfile:^(User *user, NSString *error) {
+  self.stackService = [[StackOverflowService alloc]init];
+  
+  [self.stackService fetchUserProfile:^(User *user, NSString *error) {
     self.user = user;
     [self.tableView reloadData];
   }];

@@ -165,14 +165,5 @@
   return _profileVC;
 }
 
-//-(UINavigationController *)searchQuestionsVC {
-//  if (_searchQuestionsVC != nil) {
-//    return _searchQuestionsVC;
-//}
-//  
-//  _searchQuestionsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchQuestionsNav"];
-//  return _searchQuestionsVC;
-//}
-
 
 @end

@@ -17,7 +17,8 @@
 @property(strong,nonatomic)NSString *profileImageURL;
 @property(strong,nonatomic)UIImage *profileImage;
 @property(strong,nonatomic)NSString *createdAt;
+@property(strong,nonatomic)NSString *link;
 
--(instancetype)init:(NSInteger)questionID withTitle:(NSString *)title andIsAnswered:(BOOL)isAnswered withTags:(NSArray *)tags AndProfileImageURL:(NSString *)profileImageURL AndCreatedAt:(NSString *)createdAt;
+-(instancetype)init:(NSInteger)questionID withTitle:(NSString *)title andIsAnswered:(BOOL)isAnswered withTags:(NSArray *)tags AndProfileImageURL:(NSString *)profileImageURL AndCreatedAt:(NSString *)createdAt WithLink:(NSString *)link;
 
 @end

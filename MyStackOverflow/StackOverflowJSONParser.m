@@ -8,14 +8,13 @@
 
 #import "StackOverflowJSONParser.h"
 #import "Question.h"
-#import "USer.h"
+#import "User.h"
+#import "Answer.h"
 
 @implementation StackOverflowJSONParser
 
 +(NSArray *)parseSearchQuestionsFromData:(NSDictionary *)searchListInfo {
   NSMutableArray *questionsList = [[NSMutableArray alloc]init];
-//  NSError *error;
-//  id questionListInfo = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
   NSArray *questions = searchListInfo[@"items"];
   NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
   [dateFormatter setDateFormat:@"yyyy-MM-dd"];
@@ -32,7 +31,9 @@
     NSNumber *createdAt = questionInfo[@"creation_date"];
     NSDate* date = [NSDate dateWithTimeIntervalSince1970:createdAt.integerValue];
     NSString *dateString = [dateFormatter stringFromDate:date];
-    Question *question = [[Question alloc]init:questionID.integerValue withTitle:title andIsAnswered:isAnswered withTags:tags AndProfileImageURL:profileImageURL AndCreatedAt:dateString
+    NSString *link = questionInfo[@"link"];
+    
+    Question *question = [[Question alloc]init:questionID.integerValue withTitle:title andIsAnswered:isAnswered withTags:tags AndProfileImageURL:profileImageURL AndCreatedAt:dateString WithLink:link
                           ];
     [questionsList addObject:question];
   }
@@ -40,8 +41,6 @@
 }
 
 +(User *)parseUserInfoFromData:(NSDictionary *)userInfo {
-//  NSError *error;
-//  NSDictionary *userInfo = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
   NSArray *items = userInfo[@"items"];
   NSNumber *accountID = items[0][@"account_id"];
   NSString *displayName = items[0][@"display_name"];
@@ -60,6 +59,7 @@
   NSMutableArray *answerIDs = [[NSMutableArray alloc]init];
   for (NSDictionary *answerInfo in items) {
     NSNumber *answerID = answerInfo[@"answer_id"];
+    NSLog(@"Answer ID: %@",answerID);
     [answerIDs addObject:answerID];
   }
   return answerIDs;
@@ -70,9 +70,11 @@
   NSMutableArray *answers = [[NSMutableArray alloc]init];
   for (NSDictionary *answerInfo in items) {
     NSNumber *answerID = answerInfo[@"answer_id"];
-    
-    
-    [answers addObject:answerID];
+    BOOL isAccepted = answerInfo[@"is_accepted"];
+    NSNumber *score = answerInfo[@"score"];
+    NSString *profileImageURL =answerInfo[@"profile_image"];
+    Answer *answer = [[Answer alloc]initWithAnswerID:answerID.integerValue isaccepted:isAccepted score:score.integerValue profileImageURL:profileImageURL];
+    [answers addObject:answer];
   }
   return answers;
 }

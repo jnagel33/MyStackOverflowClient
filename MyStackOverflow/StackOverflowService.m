@@ -11,9 +11,30 @@
 #import "User.h"
 #import "AFNetworking.h"
 
+@interface StackOverflowService ()
+
+@end
+
 @implementation StackOverflowService
 
-+(void)fetchQuestionsForSearchTerm:(NSString *)searchTerm completionHandler:(void (^)(NSArray* items, NSString *error))completionHandler {
++(id) sharedService {
+  static StackOverflowService *mySharedService = nil;
+  static dispatch_once_t onceToken;
+  dispatch_once(&onceToken, ^{
+    mySharedService = [[self alloc] init];
+  });
+  return mySharedService;
+}
+
+-(AFHTTPRequestOperationManager *)manager {
+  if (_manager != nil) {
+    return _manager;
+  }
+  _manager = [AFHTTPRequestOperationManager manager];
+  return _manager;
+}
+
+-(void)fetchQuestionsForSearchTerm:(NSString *)searchTerm completionHandler:(void (^)(NSArray* items, NSString *error))completionHandler {
   
   NSString *searchText = [searchTerm stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
   
@@ -24,9 +45,7 @@
     NSLog(@"%@",token);
     urlStr = [urlStr stringByAppendingString:[NSString stringWithFormat:@"&token=%@", token]];
   }
-  
-  AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-  [manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+  [self.manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
     NSLog(@"JSON: %@", responseObject);
     NSArray * questions = [StackOverflowJSONParser parseSearchQuestionsFromData:responseObject];
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -38,7 +57,7 @@
 }
 
 
-+(void)fetchUserProfile:(void (^)(User *user, NSString *error))completionHandler {
+-(void)fetchUserProfile:(void (^)(User *user, NSString *error))completionHandler {
   
   NSString *urlStr = [NSString stringWithFormat:@"%@%@?site=stackoverflow&key=1F7UZ5g3*p4JmBttfjVUwg((", kStackOverflowBase, kMeEndpoint];
   
@@ -48,8 +67,7 @@
     urlStr = [urlStr stringByAppendingString:[NSString stringWithFormat:@"&access_token=%@", token]];
   }
   
-  AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-  [manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+  [self.manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
     NSLog(@"JSON: %@", responseObject);
     User *user = [StackOverflowJSONParser parseUserInfoFromData:responseObject];
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -60,7 +78,7 @@
   }];
 }
 
-+(void)fetchAnswerIDsToQuestion:(NSInteger) questionID completionHandler:(void (^)(NSArray *answerIDs, NSString *error))completionHandler {
+-(void)fetchAnswerIDsToQuestion:(NSInteger) questionID completionHandler:(void (^)(NSArray *answerIDs, NSString *error))completionHandler {
   NSString *questionIDStr = [NSString stringWithFormat:@"%ld",(long)questionID];
   
   NSString *urlStr = [NSString stringWithFormat:@"%@%@/%@/answers?site=stackoverflow&key=1F7UZ5g3*p4JmBttfjVUwg((", kStackOverflowBase, kQuestionEndpoint, questionIDStr];
@@ -71,8 +89,7 @@
     urlStr = [urlStr stringByAppendingString:[NSString stringWithFormat:@"&access_token=%@", token]];
   }
   
-  AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-  [manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+  [self.manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
     NSLog(@"JSON: %@", responseObject);
     NSArray *answerIDs = [StackOverflowJSONParser parseAnswerIDsFrom:responseObject];
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -83,7 +100,7 @@
   }];
 }
 
-+(void)fetchAnswerByIDs:(NSArray *)answerIDs completionHandler:(void (^)(NSArray *answers, NSString *error))completionHandler {
+-(void)fetchAnswerByIDs:(NSArray *)answerIDs completionHandler:(void (^)(NSArray *answers, NSString *error))completionHandler {
   NSString *answersStr = [answerIDs componentsJoinedByString:@";"];
   
   NSString *urlStr = [NSString stringWithFormat:@"%@%@/%@?site=stackoverflow&key=1F7UZ5g3*p4JmBttfjVUwg((", kStackOverflowBase, kAnswersEndpoint, answersStr];
@@ -94,16 +111,17 @@
     urlStr = [urlStr stringByAppendingString:[NSString stringWithFormat:@"&access_token=%@", token]];
   }
   
-  AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-  [manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+  
+  [self.manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
     NSLog(@"JSON: %@", responseObject);
-    NSArray *answerIDs = [StackOverflowJSONParser parseAnswerIDsFrom:responseObject];
+    NSArray *answerIDs = [StackOverflowJSONParser parseAnswersFromData:responseObject];
     dispatch_async(dispatch_get_main_queue(), ^{
       completionHandler(answerIDs, nil);
     });
   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     NSLog(@"%@",error.description);
   }];
+  
 }
 
 
