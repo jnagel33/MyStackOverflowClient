@@ -7,7 +7,6 @@
 //
 
 #import "BurgerContainerViewController.h"
-#import "MainViewController.h"
 #import "SideMenuTableViewController.h"
 #import "SideMenuSelectionDelegate.h"
 #import "MyQuestionsViewController.h"
