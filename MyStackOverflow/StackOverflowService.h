@@ -7,12 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+@class User;
 
-#define kStackOverflowBase @"https://api.stackexchange.com/2.2/"
+#define kStackOverflowBase @"https://api.stackexchange.com/2.2"
 #define kSearchEndpoint @"/search"
+#define kUserEndpoint @"/user"
 
 @interface StackOverflowService : NSObject
 
 +(void)fetchQuestionsForSearchTerm:(NSString *)searchTerm completionHandler:(void (^)(NSArray* items, NSString *error))completionHandler;
+
++(void)fetchUserProfile:(void (^)(User* user, NSString *error))completionHandler;
 
 @end

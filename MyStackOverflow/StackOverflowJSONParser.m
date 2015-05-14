@@ -8,6 +8,7 @@
 
 #import "StackOverflowJSONParser.h"
 #import "Question.h"
+#import "USer.h"
 
 @implementation StackOverflowJSONParser
 
@@ -36,6 +37,21 @@
     [questionsList addObject:question];
   }
   return questionsList;
+}
+
++(User *)parseUserInfoFromData:(NSData *)data {
+  NSError *error;
+  NSDictionary *userInfo = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+  NSNumber *accountID = userInfo[@"account_id"];
+  NSString *displayName = userInfo[@"display_name"];
+  NSNumber *reputation = userInfo[@"reputation"];
+  NSString *profileImageURL = userInfo[@"profile_image"];
+  NSNumber *acceptRate = userInfo[@"accept_rate"];
+  NSDictionary *badgeCounts = userInfo[@"badge_counts"];
+  
+  
+  User *user = [[User alloc]initWithAccountID:accountID.integerValue displayName:displayName reputation:reputation.integerValue acceptRate:acceptRate.integerValue profileImageURL:profileImageURL badgeCounts:badgeCounts];
+  return user;
 }
 
 @end

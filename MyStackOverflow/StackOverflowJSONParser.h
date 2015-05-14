@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+@class User;
 
 @interface StackOverflowJSONParser : NSObject
 
 +(NSArray *)parseSearchQuestionsFromData:(NSData *)data;
+
++(User *)parseUserInfoFromData:(NSData *)data;
 
 @end
