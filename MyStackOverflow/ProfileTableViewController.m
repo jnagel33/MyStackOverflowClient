@@ -7,82 +7,60 @@
 //
 
 #import "ProfileTableViewController.h"
+#import "ProfileImageTableViewCell.h"
+#import "DisplayNameTableViewCell.h"
+#import "AcceptanceRateReputationTableViewCell.h"
+#import "BadgesTableViewCell.h"
+#import "StackOverflowService.h"
 
 @interface ProfileTableViewController ()
+
+@property(strong,nonatomic)User *user;
 
 @end
 
 @implementation ProfileTableViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  [super viewDidLoad];
+  
+  [StackOverflowService fetchUserProfile:^(User *user, NSString *error) {
+    self.user = user;
+    [self.tableView reloadData];
+  }];
 }
 
 #pragma mark - Table view data source
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+  return 4;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  if (indexPath.row == 0) {
+    ProfileImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProfileImageViewCell" forIndexPath:indexPath];
+    [cell configureCell:self.user];
     return cell;
+  } else if (indexPath.row == 1) {
+    DisplayNameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DisplayNameCell" forIndexPath:indexPath];
+    [cell configureCell:self.user];
+    return cell;
+  } else if (indexPath.row == 2) {
+    AcceptanceRateReputationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AcceptanceReputationCell" forIndexPath:indexPath];
+    [cell configureCell:self.user];
+    return cell;
+  } else {
+    BadgesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BadgesCell" forIndexPath:indexPath];
+    [cell configureCell:self.user];
+    return cell;
+  }
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+  if (indexPath.row == 0) {
+    return 150;
+  }
+  return 40;
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

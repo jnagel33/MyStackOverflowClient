@@ -23,6 +23,8 @@
     self.window.rootViewController = containerVC;
   }
   
+  NSURLCache *sharedCache = [[NSURLCache alloc] initWithMemoryCapacity:100 * 1024 * 1024 diskCapacity:100 * 1024 * 1024 diskPath:nil];
+  [NSURLCache setSharedURLCache:sharedCache];
   
   return YES;
 }

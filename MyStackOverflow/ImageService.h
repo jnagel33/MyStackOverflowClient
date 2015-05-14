@@ -14,4 +14,6 @@
 
 -(void)fetchProfileImages:(NSArray *)urls completionHandler:(void (^)(NSArray* images))completionHandler;
 
+-(UIImage *)getImageFromURL:(NSString *)urlStr;
+
 @end

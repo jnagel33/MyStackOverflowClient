@@ -72,6 +72,18 @@ const CGFloat kProfileImageSizeWidthHeight = 50;
   return headerView;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  [tableView deselectRowAtIndexPath:indexPath animated:true];
+  Question *question = self.questions[indexPath.section];
+  [StackOverflowService fetchAnswerIDsToQuestion:question.questionID completionHandler:^(NSArray *answerIDs, NSString *error) {
+    NSLog(@"%@",answerIDs);
+    [StackOverflowService fetchAnswerByIDs:answerIDs completionHandler:^(NSArray *answers, NSString *error) {
+      NSLog(@"%@",answers);
+    }];
+    
+  }];
+}
+
 #pragma mark - UISearchBarDelegate
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {

@@ -11,12 +11,14 @@
 @implementation User
 
 -(instancetype)initWithAccountID: (NSInteger)accountID displayName:(NSString *)displayName reputation: (NSInteger)reputation acceptRate:(NSInteger)acceptRate profileImageURL:(NSString *)profileImageURL badgeCounts:(NSDictionary *)badgeCount {
-  _accountId = accountID;
-  _displayName = displayName;
-  _reputation = reputation;
-  _acceptRate = acceptRate;
-  _profileImageURL = profileImageURL;
-  _badgeCounts = badgeCount;
+  if (self = [super init]) {
+    _accountId = accountID;
+    _displayName = displayName;
+    _reputation = reputation;
+    _acceptRate = acceptRate;
+    _profileImageURL = profileImageURL;
+    _badgeCounts = badgeCount;
+  }
   
   return self;
 }

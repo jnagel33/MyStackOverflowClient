@@ -12,11 +12,11 @@
 
 @implementation StackOverflowJSONParser
 
-+(NSArray *)parseSearchQuestionsFromData:(NSData *)data {
++(NSArray *)parseSearchQuestionsFromData:(NSDictionary *)searchListInfo {
   NSMutableArray *questionsList = [[NSMutableArray alloc]init];
-  NSError *error;
-  id questionListInfo = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-  NSArray *questions = questionListInfo[@"items"];
+//  NSError *error;
+//  id questionListInfo = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+  NSArray *questions = searchListInfo[@"items"];
   NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
   [dateFormatter setDateFormat:@"yyyy-MM-dd"];
   for (NSDictionary *questionInfo in questions) {
@@ -39,19 +39,42 @@
   return questionsList;
 }
 
-+(User *)parseUserInfoFromData:(NSData *)data {
-  NSError *error;
-  NSDictionary *userInfo = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-  NSNumber *accountID = userInfo[@"account_id"];
-  NSString *displayName = userInfo[@"display_name"];
-  NSNumber *reputation = userInfo[@"reputation"];
-  NSString *profileImageURL = userInfo[@"profile_image"];
-  NSNumber *acceptRate = userInfo[@"accept_rate"];
-  NSDictionary *badgeCounts = userInfo[@"badge_counts"];
++(User *)parseUserInfoFromData:(NSDictionary *)userInfo {
+//  NSError *error;
+//  NSDictionary *userInfo = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+  NSArray *items = userInfo[@"items"];
+  NSNumber *accountID = items[0][@"account_id"];
+  NSString *displayName = items[0][@"display_name"];
+  NSNumber *reputation = items[0][@"reputation"];
+  NSString *profileImageURL = items[0][@"profile_image"];
+  NSNumber *acceptRate = items[0][@"accept_rate"];
+  NSDictionary *badgeCounts = items[0][@"badge_counts"];
   
   
   User *user = [[User alloc]initWithAccountID:accountID.integerValue displayName:displayName reputation:reputation.integerValue acceptRate:acceptRate.integerValue profileImageURL:profileImageURL badgeCounts:badgeCounts];
   return user;
+}
+
++(NSArray *)parseAnswerIDsFrom:(NSDictionary *)data {
+  NSArray *items = data[@"items"];
+  NSMutableArray *answerIDs = [[NSMutableArray alloc]init];
+  for (NSDictionary *answerInfo in items) {
+    NSNumber *answerID = answerInfo[@"answer_id"];
+    [answerIDs addObject:answerID];
+  }
+  return answerIDs;
+}
+
++(NSArray *)parseAnswersFromData:(NSDictionary *)data {
+  NSArray *items = data[@"items"];
+  NSMutableArray *answers = [[NSMutableArray alloc]init];
+  for (NSDictionary *answerInfo in items) {
+    NSNumber *answerID = answerInfo[@"answer_id"];
+    
+    
+    [answers addObject:answerID];
+  }
+  return answers;
 }
 
 @end

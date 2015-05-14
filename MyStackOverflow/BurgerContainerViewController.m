@@ -21,6 +21,7 @@
 @property(strong,nonatomic)UITapGestureRecognizer *tapToClose;
 @property (strong,nonatomic) UINavigationController *myQuestionsVC;
 @property (strong,nonatomic) UINavigationController *searchQuestionsVC;
+@property (strong,nonatomic) UINavigationController *profileVC;
 
 @end
 
@@ -113,13 +114,18 @@
       [self switchToViewController:self.searchQuestionsVC];
       return;
     }
-  }
-  if (selection == 1) {
+  } else if (selection == 1) {
     if (self.topViewController != self.myQuestionsVC) {
       [self switchToViewController:self.myQuestionsVC];
       return;
     }
+  } else if (selection == 2) {
+    if (self.topViewController != self.profileVC) {
+      [self switchToViewController:self.profileVC];
+      return;
+    }
   }
+  
   [self closeSideMenu];
 }
 
@@ -150,14 +156,23 @@
   return _myQuestionsVC;
 }
 
--(UINavigationController *)searchQuestionsVC {
-  if (_searchQuestionsVC != nil) {
-    return _searchQuestionsVC;
-}
+-(UINavigationController *)profileVC {
+  if (_profileVC != nil) {
+    return _profileVC;
+  }
   
-  _searchQuestionsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchQuestionsNav"];
-  return _searchQuestionsVC;
+  _profileVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProfileNav"];
+  return _profileVC;
 }
+
+//-(UINavigationController *)searchQuestionsVC {
+//  if (_searchQuestionsVC != nil) {
+//    return _searchQuestionsVC;
+//}
+//  
+//  _searchQuestionsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchQuestionsNav"];
+//  return _searchQuestionsVC;
+//}
 
 
 @end

@@ -11,8 +11,12 @@
 
 @interface StackOverflowJSONParser : NSObject
 
-+(NSArray *)parseSearchQuestionsFromData:(NSData *)data;
++(NSArray *)parseSearchQuestionsFromData:(NSDictionary *)data;
 
-+(User *)parseUserInfoFromData:(NSData *)data;
++(User *)parseUserInfoFromData:(NSDictionary *)data;
+
++(NSArray *)parseAnswerIDsFrom:(NSDictionary *)data;
+
++(NSArray *)parseAnswersFromData:(NSDictionary *)data;
 
 @end
