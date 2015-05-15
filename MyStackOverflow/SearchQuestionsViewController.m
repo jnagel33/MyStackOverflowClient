@@ -14,6 +14,8 @@
 #import "Question.h"
 #import "ImageResizer.h"
 #import "QuestionWebViewController.h"
+#import "NoResultsTableViewCell.h"
+#import "SearchingTableViewCell.h"
 
 const CGFloat kProfileImageSizeWidthHeight = 50;
 
@@ -21,6 +23,8 @@ const CGFloat kProfileImageSizeWidthHeight = 50;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property(strong,nonatomic)NSArray *questions;
 @property(strong,nonatomic)StackOverflowService *stackService;
+@property(nonatomic)bool isLoading;
+@property(nonatomic)bool hasSearched;
 
 @end
 
@@ -28,6 +32,8 @@ const CGFloat kProfileImageSizeWidthHeight = 50;
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  self.isLoading = false;
+  self.hasSearched = false;
   
   self.stackService = [StackOverflowService sharedService];
   
@@ -41,23 +47,40 @@ const CGFloat kProfileImageSizeWidthHeight = 50;
   
   self.tableView.estimatedRowHeight = 90;
   self.tableView.rowHeight = UITableViewAutomaticDimension;
+  [self.tableView registerClass:[NoResultsTableViewCell class] forCellReuseIdentifier:@"NoResultsCell"];
+  UINib *cellNib = [UINib nibWithNibName:@"SearchingTableViewCell" bundle:[NSBundle mainBundle]];
+  [self.tableView registerNib:cellNib forCellReuseIdentifier:@"SearchingCell"];
   
  }
 
 #pragma mark - UITableViewDataSource
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+  if (!self.hasSearched) {
+    return 0;
+  }
   return 1;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  QuestionsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"QuestionCell" forIndexPath:indexPath];
-  Question *question = self.questions[indexPath.section];
-  [cell configureCell:question];
-  return cell;
+  if (self.isLoading) {
+    SearchingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SearchingCell" forIndexPath:indexPath];
+    return cell;
+  } else if (self.questions.count == 0) {
+    NoResultsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NoResultsCell" forIndexPath:indexPath];
+    return cell;
+  } else {
+    QuestionsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"QuestionCell" forIndexPath:indexPath];
+    Question *question = self.questions[indexPath.section];
+    [cell configureCell:question];
+    return cell;
+  }
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+  if (self.questions.count == 0 || self.isLoading) {
+    return 1;
+  }
   return self.questions.count;
 }
 
@@ -90,12 +113,16 @@ const CGFloat kProfileImageSizeWidthHeight = 50;
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
   if (searchBar.text) {
+    self.hasSearched = true;
+    self.isLoading = true;
+    [self.tableView reloadData];
     [self.searchBar resignFirstResponder];
     [self.stackService fetchQuestionsForSearchTerm:searchBar.text completionHandler:^(NSArray *items, NSString *error) {
       if (error != nil) {
         //handle error
       } else {
         self.questions = items;
+        self.isLoading = false;
         [self.tableView reloadData];
         
         NSMutableArray *urls = [[NSMutableArray alloc]init];

@@ -15,8 +15,8 @@
 
 @interface ProfileTableViewController ()
 
-@property(strong,nonatomic)User *user;
-@property(strong,nonatomic)StackOverflowService *stackService;
+@property(retain,nonatomic)User *user;
+@property(retain,nonatomic)StackOverflowService *stackService;
 
 @end
 
@@ -31,6 +31,13 @@
     self.user = user;
     [self.tableView reloadData];
   }];
+  [self.stackService release];
+}
+
+-(void)dealloc {
+  [super dealloc];
+  [self.tableView release];
+  [self.user release];
 }
 
 #pragma mark - Table view data source

@@ -9,7 +9,6 @@
 #import "StackOverflowJSONParser.h"
 #import "Question.h"
 #import "User.h"
-#import "Answer.h"
 
 @implementation StackOverflowJSONParser
 
@@ -53,30 +52,4 @@
   User *user = [[User alloc]initWithAccountID:accountID.integerValue displayName:displayName reputation:reputation.integerValue acceptRate:acceptRate.integerValue profileImageURL:profileImageURL badgeCounts:badgeCounts];
   return user;
 }
-
-+(NSArray *)parseAnswerIDsFrom:(NSDictionary *)data {
-  NSArray *items = data[@"items"];
-  NSMutableArray *answerIDs = [[NSMutableArray alloc]init];
-  for (NSDictionary *answerInfo in items) {
-    NSNumber *answerID = answerInfo[@"answer_id"];
-    NSLog(@"Answer ID: %@",answerID);
-    [answerIDs addObject:answerID];
-  }
-  return answerIDs;
-}
-
-+(NSArray *)parseAnswersFromData:(NSDictionary *)data {
-  NSArray *items = data[@"items"];
-  NSMutableArray *answers = [[NSMutableArray alloc]init];
-  for (NSDictionary *answerInfo in items) {
-    NSNumber *answerID = answerInfo[@"answer_id"];
-    bool isAccepted = answerInfo[@"is_accepted"];
-    NSNumber *score = answerInfo[@"score"];
-    NSString *profileImageURL =answerInfo[@"profile_image"];
-    Answer *answer = [[Answer alloc]initWithAnswerID:answerID.integerValue isaccepted:isAccepted score:score.integerValue profileImageURL:profileImageURL];
-    [answers addObject:answer];
-  }
-  return answers;
-}
-
 @end

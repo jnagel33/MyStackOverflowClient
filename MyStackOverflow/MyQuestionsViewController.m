@@ -12,6 +12,7 @@
 #import "Question.h"
 #import "QuestionsTableViewCell.h"
 #import "QuestionWebViewController.h"
+#import "NoResultsTableViewCell.h"
 
 @interface MyQuestionsViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -28,14 +29,15 @@
   self.tableView.dataSource = self;
   self.tableView.delegate = self;
   
+  [self.tableView registerClass:[NoResultsTableViewCell class] forCellReuseIdentifier:@"NoResultsCell"];
   self.stackService = [StackOverflowService sharedService];
-  
   self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"MyQuestions"]];
   
   self.view.backgroundColor = [StackOverFlowStyleKit lightGray];
   
   [self.stackService fetchUserQuestions:^(NSArray *questions, NSString *error) {
-    NSLog(@"%@",questions);
+    self.questions = questions;
+    [self.tableView reloadData];
   }];
 }
 
@@ -46,13 +48,21 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  QuestionsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"QuestionCell" forIndexPath:indexPath];
-  Question *question = self.questions[indexPath.section];
-  [cell configureCell:question];
-  return cell;
+  if (self.questions.count == 0) {
+    NoResultsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NoResultsCell" forIndexPath:indexPath];
+    return cell;
+  } else {
+    QuestionsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"QuestionCell" forIndexPath:indexPath];
+    Question *question = self.questions[indexPath.section];
+    [cell configureCell:question];
+    return cell;
+  }
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+  if (self.questions.count == 0) {
+    return 1;
+  }
   return self.questions.count;
 }
 

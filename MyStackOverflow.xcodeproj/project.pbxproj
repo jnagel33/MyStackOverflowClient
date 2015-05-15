@@ -11,8 +11,10 @@
 		4311EEC11B04369300D34284 /* DisplayNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4311EEC01B04369300D34284 /* DisplayNameTableViewCell.m */; };
 		4311EEC41B0436CB00D34284 /* AcceptanceRateReputationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4311EEC31B0436CB00D34284 /* AcceptanceRateReputationTableViewCell.m */; };
 		4311EEC71B0436FE00D34284 /* BadgesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4311EEC61B0436FE00D34284 /* BadgesTableViewCell.m */; };
-		4311EECA1B0460C100D34284 /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4311EEC91B0460C100D34284 /* Answer.m */; };
 		4311EED01B051E3F00D34284 /* QuestionWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4311EECF1B051E3F00D34284 /* QuestionWebViewController.m */; };
+		4311EED31B05745100D34284 /* NoResultsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4311EED21B05745100D34284 /* NoResultsTableViewCell.m */; };
+		4311EED71B0578D200D34284 /* SearchingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4311EED51B0578D200D34284 /* SearchingTableViewCell.m */; };
+		4311EED81B0578D200D34284 /* SearchingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4311EED61B0578D200D34284 /* SearchingTableViewCell.xib */; };
 		43BFDEBC1B017F7B00197988 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDEBB1B017F7B00197988 /* main.m */; };
 		43BFDEBF1B017F7B00197988 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDEBE1B017F7B00197988 /* AppDelegate.m */; };
 		43BFDEC81B017F7B00197988 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43BFDEC61B017F7B00197988 /* Main.storyboard */; };
@@ -35,7 +37,7 @@
 		43BFDF111B03B67300197988 /* ImageService.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDF101B03B67300197988 /* ImageService.m */; };
 		43BFDF141B03C3FB00197988 /* ImageResizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDF131B03C3FB00197988 /* ImageResizer.m */; };
 		43BFDF171B03CF0800197988 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDF161B03CF0800197988 /* User.m */; };
-		43BFDF1A1B03DFBB00197988 /* ProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDF191B03DFBB00197988 /* ProfileTableViewController.m */; };
+		43BFDF1A1B03DFBB00197988 /* ProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFDF191B03DFBB00197988 /* ProfileTableViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		796DCD00FEF1C1E3F4D9DAF9 /* libPods-MyStackOverflow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BE7E9566E4CF5CDE2D42777 /* libPods-MyStackOverflow.a */; };
 /* End PBXBuildFile section */
 
@@ -59,10 +61,13 @@
 		4311EEC31B0436CB00D34284 /* AcceptanceRateReputationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcceptanceRateReputationTableViewCell.m; sourceTree = "<group>"; };
 		4311EEC51B0436FE00D34284 /* BadgesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgesTableViewCell.h; sourceTree = "<group>"; };
 		4311EEC61B0436FE00D34284 /* BadgesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgesTableViewCell.m; sourceTree = "<group>"; };
-		4311EEC81B0460C100D34284 /* Answer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Answer.h; sourceTree = "<group>"; };
-		4311EEC91B0460C100D34284 /* Answer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Answer.m; sourceTree = "<group>"; };
 		4311EECE1B051E3F00D34284 /* QuestionWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionWebViewController.h; sourceTree = "<group>"; };
 		4311EECF1B051E3F00D34284 /* QuestionWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionWebViewController.m; sourceTree = "<group>"; };
+		4311EED11B05745100D34284 /* NoResultsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoResultsTableViewCell.h; sourceTree = "<group>"; };
+		4311EED21B05745100D34284 /* NoResultsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoResultsTableViewCell.m; sourceTree = "<group>"; };
+		4311EED41B0578D200D34284 /* SearchingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchingTableViewCell.h; sourceTree = "<group>"; };
+		4311EED51B0578D200D34284 /* SearchingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchingTableViewCell.m; sourceTree = "<group>"; };
+		4311EED61B0578D200D34284 /* SearchingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchingTableViewCell.xib; sourceTree = "<group>"; };
 		43BFDEB61B017F7B00197988 /* MyStackOverflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyStackOverflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43BFDEBA1B017F7B00197988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43BFDEBB1B017F7B00197988 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -227,7 +232,12 @@
 				43BFDEF81B01E4AF00197988 /* StackOverFlowStyleKit.h */,
 				43BFDEF91B01E4AF00197988 /* StackOverFlowStyleKit.m */,
 				43BFDF041B03337700197988 /* QuestionsTableViewCell.h */,
+				4311EED11B05745100D34284 /* NoResultsTableViewCell.h */,
+				4311EED21B05745100D34284 /* NoResultsTableViewCell.m */,
 				43BFDF051B03337700197988 /* QuestionsTableViewCell.m */,
+				4311EED41B0578D200D34284 /* SearchingTableViewCell.h */,
+				4311EED51B0578D200D34284 /* SearchingTableViewCell.m */,
+				4311EED61B0578D200D34284 /* SearchingTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -242,8 +252,6 @@
 				43BFDEF11B018DB500197988 /* SideMenuSelectionDelegate.h */,
 				43BFDEFB1B02FF4200197988 /* StackOverflowService.h */,
 				43BFDEFC1B02FF4200197988 /* StackOverflowService.m */,
-				4311EEC81B0460C100D34284 /* Answer.h */,
-				4311EEC91B0460C100D34284 /* Answer.m */,
 				43BFDF151B03CF0800197988 /* User.h */,
 				43BFDF161B03CF0800197988 /* User.m */,
 				43BFDF0F1B03B67300197988 /* ImageService.h */,
@@ -360,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43BFDEC81B017F7B00197988 /* Main.storyboard in Resources */,
+				4311EED81B0578D200D34284 /* SearchingTableViewCell.xib in Resources */,
 				43BFDECD1B017F7B00197988 /* LaunchScreen.xib in Resources */,
 				43BFDECA1B017F7B00197988 /* Images.xcassets in Resources */,
 				43BFDF0B1B033F4500197988 /* SideMenuTableViewCell.xib in Resources */,
@@ -420,14 +429,15 @@
 				43BFDF1A1B03DFBB00197988 /* ProfileTableViewController.m in Sources */,
 				43BFDF031B03286C00197988 /* Question.m in Sources */,
 				4311EEC41B0436CB00D34284 /* AcceptanceRateReputationTableViewCell.m in Sources */,
+				4311EED31B05745100D34284 /* NoResultsTableViewCell.m in Sources */,
 				43BFDEF41B01A36300197988 /* WebOAuthViewController.m in Sources */,
 				43BFDEED1B0182F500197988 /* SearchQuestionsViewController.m in Sources */,
 				43BFDEEA1B0182DE00197988 /* MyQuestionsViewController.m in Sources */,
 				4311EED01B051E3F00D34284 /* QuestionWebViewController.m in Sources */,
-				4311EECA1B0460C100D34284 /* Answer.m in Sources */,
 				43BFDEBC1B017F7B00197988 /* main.m in Sources */,
 				43BFDF091B033CB500197988 /* SideMenuTableViewCell.m in Sources */,
 				43BFDF141B03C3FB00197988 /* ImageResizer.m in Sources */,
+				4311EED71B0578D200D34284 /* SearchingTableViewCell.m in Sources */,
 				43BFDEFA1B01E4AF00197988 /* StackOverFlowStyleKit.m in Sources */,
 				43BFDEFD1B02FF4200197988 /* StackOverflowService.m in Sources */,
 				43BFDEF71B01AE1B00197988 /* LoginViewController.m in Sources */,

@@ -15,8 +15,4 @@
 
 +(User *)parseUserInfoFromData:(NSDictionary *)data;
 
-+(NSArray *)parseAnswerIDsFrom:(NSDictionary *)data;
-
-+(NSArray *)parseAnswersFromData:(NSDictionary *)data;
-
 @end
