@@ -80,11 +80,9 @@ const CGFloat kProfileImageSizeWidthHeight = 50;
   Question *question = self.questions[indexPath.section];
   [tableView deselectRowAtIndexPath:indexPath animated:true];
   
-  QuestionWebViewController *webVC = [[QuestionWebViewController alloc] init];
+  QuestionWebViewController *webVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchWebVC"];
   webVC.link = question.link;
   webVC.view.frame = self.view.frame;
-//  [self.navigationController pushViewController:webVC animated:true];
-  
   [self presentViewController:webVC animated:true completion:nil];
 }
 

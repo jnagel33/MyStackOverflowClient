@@ -21,7 +21,7 @@
   for (NSDictionary *questionInfo in questions) {
     NSNumber *questionID = questionInfo[@"question_id"];
     NSString *title = questionInfo[@"title"];
-    BOOL isAnswered = questionInfo[@"is_answered"];
+    bool isAnswered = questionInfo[@"is_answered"];
     NSArray *tags = questionInfo[@"tags"];
     if (tags.count > 3) {
       tags = [tags subarrayWithRange:NSMakeRange(0, 3)];
@@ -70,7 +70,7 @@
   NSMutableArray *answers = [[NSMutableArray alloc]init];
   for (NSDictionary *answerInfo in items) {
     NSNumber *answerID = answerInfo[@"answer_id"];
-    BOOL isAccepted = answerInfo[@"is_accepted"];
+    bool isAccepted = answerInfo[@"is_accepted"];
     NSNumber *score = answerInfo[@"score"];
     NSString *profileImageURL =answerInfo[@"profile_image"];
     Answer *answer = [[Answer alloc]initWithAnswerID:answerID.integerValue isaccepted:isAccepted score:score.integerValue profileImageURL:profileImageURL];

@@ -19,10 +19,16 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  self.webView = [[WKWebView alloc]initWithFrame:self.view.frame];
+  
+  
+  
+  self.webView = [[WKWebView alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height)];
   [self.view addSubview:self.webView];
   
   [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.link]]];
+}
+- (IBAction)donePressed:(UIBarButtonItem *)sender {
+  [self dismissViewControllerAnimated:true completion:nil];
 }
 
 @end

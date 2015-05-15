@@ -78,32 +78,10 @@
   }];
 }
 
--(void)fetchAnswerIDsToQuestion:(NSInteger) questionID completionHandler:(void (^)(NSArray *answerIDs, NSString *error))completionHandler {
-  NSString *questionIDStr = [NSString stringWithFormat:@"%ld",(long)questionID];
-  
-  NSString *urlStr = [NSString stringWithFormat:@"%@%@/%@/answers?site=stackoverflow&key=1F7UZ5g3*p4JmBttfjVUwg((", kStackOverflowBase, kQuestionEndpoint, questionIDStr];
-  
-  NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:@"token"];
-  if (token) {
-    NSLog(@"%@",token);
-    urlStr = [urlStr stringByAppendingString:[NSString stringWithFormat:@"&access_token=%@", token]];
-  }
-  
-  [self.manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-    NSLog(@"JSON: %@", responseObject);
-    NSArray *answerIDs = [StackOverflowJSONParser parseAnswerIDsFrom:responseObject];
-    dispatch_async(dispatch_get_main_queue(), ^{
-      completionHandler(answerIDs, nil);
-    });
-  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-    NSLog(@"%@",error.description);
-  }];
-}
 
--(void)fetchAnswerByIDs:(NSArray *)answerIDs completionHandler:(void (^)(NSArray *answers, NSString *error))completionHandler {
-  NSString *answersStr = [answerIDs componentsJoinedByString:@";"];
+-(void)fetchUserQuestions:(void (^)(NSArray *questions, NSString *error))completionHandler {
   
-  NSString *urlStr = [NSString stringWithFormat:@"%@%@/%@?site=stackoverflow&key=1F7UZ5g3*p4JmBttfjVUwg((", kStackOverflowBase, kAnswersEndpoint, answersStr];
+  NSString *urlStr = [NSString stringWithFormat:@"%@%@%@?site=stackoverflow&key=1F7UZ5g3*p4JmBttfjVUwg((", kStackOverflowBase, kMeEndpoint, kQuestionEndpoint];
   
   NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:@"token"];
   if (token) {
@@ -111,17 +89,15 @@
     urlStr = [urlStr stringByAppendingString:[NSString stringWithFormat:@"&access_token=%@", token]];
   }
   
-  
   [self.manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
     NSLog(@"JSON: %@", responseObject);
-    NSArray *answerIDs = [StackOverflowJSONParser parseAnswersFromData:responseObject];
+    NSArray *questions = [StackOverflowJSONParser parseSearchQuestionsFromData:responseObject];
     dispatch_async(dispatch_get_main_queue(), ^{
-      completionHandler(answerIDs, nil);
+      completionHandler(questions, nil);
     });
   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     NSLog(@"%@",error.description);
   }];
-  
 }
 
 

@@ -26,6 +26,8 @@
 
 -(void)fetchUserProfile:(void (^)(User* user, NSString *error))completionHandler;
 
--(void)fetchAnswerIDsToQuestion:(NSInteger) questionID completionHandler:(void (^)(NSArray *answerIDs, NSString *error))completionHandler;
--(void)fetchAnswerByIDs:(NSArray *)answerIDs completionHandler:(void (^)(NSArray *answerIDs, NSString *error))completionHandler;
+-(void)fetchUserQuestions:(void (^)(NSArray *questions, NSString *error))completionHandler;
+
+//-(void)fetchAnswerIDsToQuestion:(NSInteger) questionID completionHandler:(void (^)(NSArray *answerIDs, NSString *error))completionHandler;
+//-(void)fetchAnswerByIDs:(NSArray *)answerIDs completionHandler:(void (^)(NSArray *answerIDs, NSString *error))completionHandler;
 @end
