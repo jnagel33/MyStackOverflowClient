@@ -39,7 +39,7 @@
   if (question.isAnswered) {
     self.checkmarkImageView.image = [UIImage imageNamed:@"CheckmarkStackOverflow"];
   }
-  self.profileImageView.transform = CGAffineTransformMakeScale(0.7, 0.7);
+  
   if (question.profileImage) {
     self.profileImageView.image = question.profileImage;
     self.profileImageView.layer.borderColor = [StackOverFlowStyleKit lightGray].CGColor;
